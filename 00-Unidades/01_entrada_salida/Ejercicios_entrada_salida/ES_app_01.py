@@ -26,8 +26,36 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        edad = 22 # Operador de asignacion
+        # pep8 -> 4 espacios
+        # pep8 -> 79 caracteres por linea
+        edadpromediodejugadoresdebasquet = 23.2 # Tipo de dato: float
 
+        # notacion snake case
+        edad_promedio_de_jugadores_de_basquet = 23.2
+        # notacion camel case
+        edadPromedioDeJugadoresDeBasquet = 23.2
+        # notacion pascal case
+        EdadPromedioDeJugadoresDeBasquet = 23.2
+        # notacion hungara
+        iEdadPromedioDeJugadoresDeBasquet = 23.2
+
+        nombre = "Jorge" # Tipo de dato string
+        verificado = True # Tipo de dato boolean
+        vacio = None # Tipo de dato None (variable sin valor)
+
+        print(edad)
+        print(edad_promedio_de_jugadores_de_basquet)
+
+        # alert("Hola PY!", "Esto es un mensaje de prueba")
+        # respuesta_question = question("Hola PY!", "Esto es un mensaje de prueba")
+        
+        # print(respuesta_question)
+
+        respuesta_prompt = prompt("Hola PY!", "Esto es un mensaje de prueba")
+
+        print(respuesta_prompt)
+        
 
 if __name__ == "__main__":
     app = App()

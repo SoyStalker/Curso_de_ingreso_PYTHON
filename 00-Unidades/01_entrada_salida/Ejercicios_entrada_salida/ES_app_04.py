@@ -33,7 +33,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        vacio = ''
+        nombre_ingresado = prompt('Prompt!', "Di tu nombre:")
+        self.txt_nombre.delete(0, tkinter.END)
+        self.txt_nombre.insert(0, nombre_ingresado)
         
     
 if __name__ == "__main__":

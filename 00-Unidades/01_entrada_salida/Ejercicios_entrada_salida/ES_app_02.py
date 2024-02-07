@@ -27,7 +27,9 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        texto_prompt = prompt("Prompt", "Di algo:")
+
+        alert("Alerta!", 'Tu palabra fue: ' + texto_prompt)
         
         
     
