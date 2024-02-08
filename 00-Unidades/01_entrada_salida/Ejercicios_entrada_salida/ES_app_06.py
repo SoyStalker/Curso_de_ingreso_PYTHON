@@ -39,8 +39,8 @@ class App(customtkinter.CTk):
 
 
     def btn_sumar_on_click(self):
-        operadorA = float(self.txt_operador_a.get())
-        operadorB = float(self.txt_operador_b.get())
+        operadorA = int(self.txt_operador_a.get())
+        operadorB = int(self.txt_operador_b.get())
 
         suma = operadorA + operadorB
 
