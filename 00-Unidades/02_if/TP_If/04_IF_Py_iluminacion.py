@@ -12,11 +12,11 @@ TP: IF_Iluminacion
 ---
 Enunciado:
 Todas las lámparas están  al mismo precio de $800 pesos final.
-		A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
-		B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
-		C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
-		D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
-		E.	Si el importe final con descuento suma más de $4000  se obtien un descuento adicional de 5%.
+	A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
+	B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
+	C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
+	D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
+	E.	Si el importe final con descuento suma más de $4000  se obtien un descuento adicional de 5%.
 '''
 
 class App(customtkinter.CTk):
@@ -43,7 +43,51 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        descuento = 0
+        lampara = 800
+        lamparitas = int(self.combobox_cantidad.get())
+        marca = self.combobox_marca.get()
+
+        precio_total = lampara * lamparitas
+
+        # Caso A
+        if(lamparitas >= 6):
+            descuento = 0.5  # 50%
+        
+        # Caso B
+        elif(lamparitas == 5):
+            if(marca == 'ArgentinaLuz'):
+                descuento = 0.4  # 40%
+            else:
+                descuento = 0.3  # 30%
+
+        # Caso C
+        elif(lamparitas == 4):
+            if(marca == 'ArgentinaLuz' or marca == 'FelipeLamparas'):
+                descuento = 0.25  # 25%
+            else:
+                descuento = 0.20  # 20%
+        
+        # Caso D
+        elif(lamparitas == 3):
+            if(marca == 'ArgentinaLuz'):
+                descuento = 0.15  # 15%
+            elif(marca == 'FelipeLamparas'):
+                descuento = 0.10  # 10%
+            else:
+                descuento = 0.05  # 5%
+
+        precio_con_descuento = precio_total * (1 - descuento)
+
+        if precio_con_descuento >= 4000:
+            descuento_adicional = 0.05  # 5%
+            descuento_adicional_aplicado = precio_con_descuento * descuento_adicional
+            precio_con_descuento -= descuento_adicional_aplicado
+            descuento = 0.05
+
+
+        alert('Alert', 'El precio final con el: ' + str(descuento * 100) + '% de descuento es: $' + str(precio_con_descuento))
+
         
     
 if __name__ == "__main__":
