@@ -48,8 +48,8 @@ class App(customtkinter.CTk):
             case 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19:
                 alert('alert', 'Es de tarde')
 
-            case 20 | 21 | 22 | 23 | 24:
-                alert('alert', 'Es de tarde')
+            case 1 | 2 | 3 | 4 | 5 | 6 | 20 | 21 | 22 | 23 | 24:
+                alert('alert', 'Es de noche')
 
             case _:
                 alert('Alert', 'La hora no existe')
