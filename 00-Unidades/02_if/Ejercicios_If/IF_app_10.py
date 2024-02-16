@@ -35,11 +35,13 @@ class App(customtkinter.CTk):
         numero_random = random.randint(1, 10)
 
         if numero_random >= 6 and numero_random <= 10:
-            alert('Alert', 'Promoción directa, la nota es: ' + str(numero_random))
+            mensaje = 'Promoción directa, la nota es: ' + str(numero_random)
         if numero_random == 4 or numero_random == 5:
-            alert('Alert', 'Aprobado, la nota es: ' + str(numero_random))
-        if numero_random == 1 or numero_random == 2 or numero_random == 3:
-            alert('Alert', 'Desaprobado, la nota es: ' + str(numero_random))
+            mensaje = 'Aprobado, la nota es: ' + str(numero_random)
+        if numero_random in (1, 2, 3):
+            mensaje = 'Desaprobado, la nota es: ' + str(numero_random)
+
+        alert('Title', mensaje)
 
 
             

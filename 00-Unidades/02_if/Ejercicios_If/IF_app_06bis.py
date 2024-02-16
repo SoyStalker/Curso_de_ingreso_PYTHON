@@ -39,17 +39,23 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        altura = int(self.txt_altura.get())
+        altura = self.txt_altura.get()
 
-        if(altura <= 160):
-            alert('Alert', 'Juegas en base')
-        elif altura <= 179:
-            alert('Alert', 'Juegas de escolta')
-        elif altura <= 199 and altura >= 180:
-            alert('Alert', 'Juegas de Alero')
-        elif altura >= 200:
-            alert('Alert', 'Juegas de Ala-Pívot o Pívot')
-        
+        if altura.isdigit():
+            altura = int(altura)
+            if(altura <= 160):
+               mensaje = 'Juegas en base'
+            elif altura <= 179:
+                mensaje = 'Juegas de escolta'
+            elif altura <= 199 and altura >= 180:
+                mensaje = 'Juegas de Alero'
+            else:
+                mensaje = 'Juegas de Ala-Pívot o Pívot'
+        else:
+            mensaje = 'Digito Invalido'
+
+        alert('Altura', mensaje)
+
     
 if __name__ == "__main__":
     app = App()

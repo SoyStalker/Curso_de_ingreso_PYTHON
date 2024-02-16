@@ -33,12 +33,19 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        altura = int(self.txt_altura.get())
+        altura = self.txt_altura.get()
 
-        if altura >= 180:
-            alert('Alert', 'Eres pivot')
+        if altura.isdigit():
+            altura = int(altura)
+            
+            if altura >= 180:
+                mensaje = 'Eres pivot'
+            else:
+                mensaje = 'No eres pivot'
         else:
-            alert('Alert', 'No eres pivot')
+            mensaje = 'Digito Invalido'
+
+        alert('Alert', mensaje)
 
 
 if __name__ == "__main__":
