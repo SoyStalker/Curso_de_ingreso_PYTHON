@@ -47,13 +47,16 @@ class App(customtkinter.CTk):
 
         match mes:
             case 'Enero':
-                alert('Title', 'Que comiences bien el año!!!')
+                mensaje = 'Que comiences bien el año!!!'
             case 'Marzo':
-                alert('Title', 'A clases!!')
+                mensaje = 'A clases!!'
             case 'Julio':
-                alert('Title', 'Se vienen las vacaciones!!')
+                mensaje = 'Se vienen las vacaciones!!'
             case 'Diciembre':
-                alert('Title', 'Felices fiestas!!!')
+                mensaje = 'Felices fiestas!!!'
+            case _:
+                mensaje = 'No hacemos nada'
+        alert('Alert', mensaje)
     
     
 if __name__ == "__main__":

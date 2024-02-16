@@ -39,20 +39,25 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        hora = int(self.txt_hora.get())
+        hora = self.txt_hora.get()
 
-        match hora:
-            case 7 | 8 | 9 | 10 | 11:
-                alert('alert', 'Es de mañana')
+        if hora.isdigit():
+            hora = int(hora)
+            match hora:
+                case 7 | 8 | 9 | 10 | 11:
+                    mensaje = 'Es de mañana'
 
-            case 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19:
-                alert('alert', 'Es de tarde')
+                case 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19:
+                    mensaje = 'Es de tarde'
 
-            case 1 | 2 | 3 | 4 | 5 | 6 | 20 | 21 | 22 | 23 | 24:
-                alert('alert', 'Es de noche')
+                case 1 | 2 | 3 | 4 | 5 | 6 | 20 | 21 | 22 | 23 | 24:
+                    mensaje = 'Es de noche'
 
-            case _:
-                alert('Alert', 'La hora no existe')
+                case _:
+                    mensaje = 'La hora no existe'
+            alert('Alert', mensaje)
+        else:
+            alert('Alert', 'Digito Invalido')
     
     
 if __name__ == "__main__":

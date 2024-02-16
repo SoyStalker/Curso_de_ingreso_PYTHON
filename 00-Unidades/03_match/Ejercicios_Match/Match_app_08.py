@@ -38,10 +38,11 @@ class App(customtkinter.CTk):
 
         match destino:
             case 'Ushuaia' | 'Bariloche':
-                alert('Title', 'Que frio!!')
+                mensaje = 'Que frio!!'
 
             case 'Mar del plata' | 'Cataratas':
-                alert('Title', 'Hace calor!!')
+                mensaje = 'Hace calor!!'
+        alert('Alert', mensaje)
     
     
 if __name__ == "__main__":

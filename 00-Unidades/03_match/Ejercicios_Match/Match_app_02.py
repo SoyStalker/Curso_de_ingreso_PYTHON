@@ -47,15 +47,16 @@ class App(customtkinter.CTk):
         match mes:
             # Antes del invierno
             case 'Enero' | 'Febrero' | 'Marzo' | 'Abril' | 'Mayo' | 'Junio':
-                alert('title', 'Falta para el invierno...')
+                mensaje = 'Falta para el invierno...'
                 
             # Invierno
             case 'Julio' | 'Agosto':
-                alert('title', '¡Abrígate que hace frío!')
+                mensaje = '¡Abrígate que hace frío!'
 
             # Después del invierno
             case _:
-                alert('title', '¡Ya pasamos frío, ahora calor!')
+                mensaje = '¡Ya pasamos frío, ahora calor!'
+        alert("Alert", mensaje)
 
             
 
