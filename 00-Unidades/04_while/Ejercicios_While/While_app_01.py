@@ -31,12 +31,9 @@ class App(customtkinter.CTk):
     def btn_mostrar_iteracion_on_click(self):
         ascendente = 1
         
-        while ascendente:
+        while ascendente <= 10:
             alert('title', ascendente)
             ascendente += 1
-
-            if(ascendente > 10):
-                break
     
 if __name__ == "__main__":
     app = App()
