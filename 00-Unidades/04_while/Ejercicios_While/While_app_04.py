@@ -34,6 +34,7 @@ class App(customtkinter.CTk):
 
         while not (0 <= numero <= 9):
             numero = int(prompt("Ingresar número", "Ingresa nuevamente un número entre 0 y 9:"))
+        alert('Alert', numero)
     
 if __name__ == "__main__":
     app = App()
