@@ -29,7 +29,18 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        pass
+        suma_pares = 0
+        num = 1
+        numeros_pares = ""
+
+        while num <= 10:
+            if num % 2 == 0:
+                suma_pares += num
+                if numeros_pares: 
+                    numeros_pares += ", "
+                numeros_pares += str(num)
+            num += 1
+        alert('alert', "La suma de los números pares del 1 al 10 ("+ numeros_pares +") es:" + str(suma_pares))
     
     
 if __name__ == "__main__":
