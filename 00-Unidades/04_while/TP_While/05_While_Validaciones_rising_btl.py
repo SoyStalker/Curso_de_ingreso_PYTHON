@@ -55,7 +55,63 @@ class App(customtkinter.CTk):
         self.btn_validar.grid(row=4, pady=20, columnspan=2, sticky="nsew")
 
     def btn_validar_on_click(self):
-        pass
+        while True:
+
+            apellido = prompt('1', 'Ingrese un apellido:')
+
+            if apellido is None:  
+                break
+
+            edad = prompt('2', 'Ingrese una edad:')
+
+            if edad is None:  
+                break
+
+            while True:
+                if not edad.isdigit() or not (18 <= int(edad) <= 90):
+                    edad = prompt('2', 'Ingrese una edad válida (entre 18 y 90 años).')
+                else:
+                    break
+
+            estado_civil = prompt('3', 'Ingrese su estado civil (Soltero/a, Casado/a, Divorciado/a, Viudo/a):')
+
+            if estado_civil is None:
+                break
+            
+            while True:  
+                if estado_civil.lower() not in ['soltero/a', 'casado/a', 'divorciado/a', 'viudo/a']:
+                    estado_civil = prompt('3', 'Ingrese un estado civil válido (Soltero/a, Casado/a, Divorciado/a, Viudo/a):')
+                else:
+                    break
+                
+            legajo = prompt('3', 'Ingrese un legajo:')
+
+            if legajo is None:
+                break
+
+            while True:
+                if not legajo.isdigit():
+                    legajo = prompt('3', 'Ingrese un legajo numérico.')
+                elif len(legajo) != 4:
+                    legajo = prompt('3', 'El legajo debe tener 4 cifras.')
+                else:
+                    break
+
+            break
+
+        self.txt_apellido.delete(0, 100000000)
+        self.txt_apellido.insert(0, apellido)
+
+        self.txt_edad.delete(0, 100000000)
+        self.txt_edad.insert(0, edad)
+
+        self.combobox_tipo.set(estado_civil)
+
+        self.txt_legajo.delete(0, 10000000)
+        self.txt_legajo.insert(0, legajo)
+            
+
+
 
 
 if __name__ == "__main__":

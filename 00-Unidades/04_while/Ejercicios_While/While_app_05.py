@@ -48,7 +48,7 @@ class App(customtkinter.CTk):
 
         while letra_prompt != letras_validas:
             letra_prompt = prompt('Alert', 'Ingresa un caracter nuevamente')
-            
+            s
         alert('Alert', "La letra ingresado es: " + letra_prompt)
         '''
     
