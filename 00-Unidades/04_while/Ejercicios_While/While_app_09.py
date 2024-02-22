@@ -40,26 +40,51 @@ class App(customtkinter.CTk):
                               columnspan=2, sticky="nsew")
 
     def btn_comenzar_ingreso_on_click(self):
-        numeros = []
+        # numeros = []
+
+        # while True:
+        #     numero = prompt('title', 'Ingrese un número:')
+
+        #     if numero is None:
+        #         break
+
+        #     numeros.append(int(numero)) # añade elementos a la lista
+
+        # if numeros:
+        #     minimo = min(numeros)
+        #     maximo = max(numeros)
+        #     self.txt_minimo.delete(0, 100000000)
+        #     self.txt_minimo.insert(0, minimo)
+            
+        #     self.txt_maximo.delete(0, 100000000)
+        #     self.txt_maximo.insert(0, maximo)
+        # else:
+        #     alert('title', 'No se ingresaron números.')
+
+        # Otra forma de hacerlo
+
+        numero = int(prompt('Prompt', 'Ingrese un numero:'))
+        maximo = numero
+        minimo = numero
 
         while True:
-            numero = prompt('title', 'Ingrese un número:')
+            numero = int(prompt('Prompt', 'Ingrese un numero:'))
 
             if numero is None:
                 break
 
-            numeros.append(int(numero)) # añade elementos a la lista
+            if maximo < numero:
+                maximo = numero
 
-        if numeros:
-            minimo = min(numeros)
-            maximo = max(numeros)
-            self.txt_minimo.delete(0, 100000000)
-            self.txt_minimo.insert(0, minimo)
-            
+            if minimo > numero:
+                minimo = numero
+
             self.txt_maximo.delete(0, 100000000)
             self.txt_maximo.insert(0, maximo)
-        else:
-            alert('title', 'No se ingresaron números.')
+            
+            self.txt_minimo.delete(0, 100000000)
+            self.txt_minimo.insert(0, minimo)
+
 
 
 if __name__ == "__main__":
