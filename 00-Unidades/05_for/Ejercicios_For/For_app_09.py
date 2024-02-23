@@ -67,18 +67,6 @@ class App(customtkinter.CTk):
                     mensaje = 'Perdiste, suerte para la próxima'
 
         alert('Alert', mensaje)
-
-            # if numero_ingresado == numero_secreto:
-            #     print(f"¡Felicidades! Adivinaste el número en {intento} intentos.")
-            #     break
-            # elif numero_ingresado < numero_secreto:
-            #     print("El número secreto es mayor. ¡Sigue intentando!")
-            # else:
-            #     print("El número secreto es menor. ¡Sigue intentando!")
-
-        # else:
-        #     print('Alert', f"Perdiste, suerte para la próxima, el numero era {numero_secreto}.")
-
     
 if __name__ == "__main__":
     app = App()
