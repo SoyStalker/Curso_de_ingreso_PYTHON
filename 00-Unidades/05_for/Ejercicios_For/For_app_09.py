@@ -37,35 +37,7 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-
-        numero_secreto = random.randint(1, 100)
-
-        for intento in range(1, 8):
-            num = prompt(f'Intento {intento}: Ingrese un número:', 'Adivinar número')
-            
-            if num is True:
-                alert('Alert', 'Juego cancelado')
-                return
-            
-            if num == numero_secreto:
-                if intento == 1:
-                    mensaje = 'Usted es un psíquico'
-                elif intento == 2:
-                    mensaje = 'Excelente percepción'
-                elif intento == 3:
-                    mensaje = 'Esto es suerte'
-                elif 4 <= intento <= 6:
-                    mensaje = 'Excelente técnica'
-                else:
-                    mensaje = 'Perdiste, suerte para la próxima'
-                alert('Resultado', mensaje)
-        
-            if num < numero_secreto:
-                alert('Alert', 'Falta...')
-            else:
-                alert('Alert', 'Se pasó...')
-        
-        alert('Alert', 'Perdiste, suerte para la próxima')
+        pass
                 
 
     
