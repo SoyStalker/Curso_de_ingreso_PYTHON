@@ -27,7 +27,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero = int(prompt('Alert', 'Ingrese un numero:'))
+
+        cantidad_divisores = 0
+        
+        for i in range(1, numero + 1):
+            if numero % i == 0:
+                cantidad_divisores += 1
+
+        alert('Alert', f'Los numeros pares hasta {numero} son: {cantidad_divisores}')
         
     
 if __name__ == "__main__":

@@ -27,7 +27,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero = int(prompt('Alert', 'Ingrese un numero:'))
+
+        numeros_pares = 0
+        
+        for i in range(1, numero + 1):
+            if i % 2 == 0:
+                numeros_pares += 1
+
+        alert('Alert', f'Los numeros pares hasta {numero} son: {numeros_pares}')
             
         
     

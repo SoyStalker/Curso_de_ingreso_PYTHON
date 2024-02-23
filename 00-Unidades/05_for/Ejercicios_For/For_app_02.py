@@ -26,7 +26,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        for i in range(5, 0, -1):
+            alert('Alert', i)
        
             
 
