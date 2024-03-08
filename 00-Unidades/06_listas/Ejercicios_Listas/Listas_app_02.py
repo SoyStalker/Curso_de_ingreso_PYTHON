@@ -27,7 +27,12 @@ class App(customtkinter.CTk):
         self.lista_datos = [2,3,5,7,11,13]
         
     def btn_calcular_on_click(self):
-        pass
+        lista = self.lista_datos
+
+        suma = sum(lista)
+        promedio = round(suma / len(lista))
+        
+        alert('Alert', f'La suma de {lista} da: {suma}, y el promedio es: {promedio}')
     
 if __name__ == "__main__":
     app = App()

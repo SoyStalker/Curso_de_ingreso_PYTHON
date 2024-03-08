@@ -1,4 +1,3 @@
-
 import tkinter
 from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
@@ -46,13 +45,63 @@ class App(customtkinter.CTk):
         self.lista_edades = []
         self.lista_generos = []
 
-
     def btn_ingresar_on_click(self):
-        pass
+        edad = self.txt_edad.get()
+        lista_edad = self.lista_edades
+
+        if not edad.isdigit() or int(edad) < 0:
+            alert('Error', 'Debes ingresar un número mayor o igual a 0 para la edad')
+        else:
+            edad = int(edad)
+            sexo = self.txt_genero.get().lower()
+            lista_genero = self.lista_generos
+
+            if sexo == '':
+                pass
+            elif sexo not in ['m', 'f']:
+                alert('Error', 'Debes ingresar "m" o "f" para el género')
+            else:
+                lista_genero.append(sexo)
+                lista_edad.append(edad)
+
+            print('edades: ', lista_edad)
+            print('generos: ', lista_genero)
+
 
     def btn_informar_on_click(self):
-        pass
-    
+        lista_edad = self.lista_edades
+        lista_genero = self.lista_generos
+
+        juntar_listas = list(zip(lista_genero, lista_edad))
+
+        # A. Promedio de edad de los hombres.
+        suma_edad_hombres = 0
+        cantidad_hombres = 0
+
+        for genero, edad in juntar_listas:
+            if genero == 'm':
+                suma_edad_hombres += edad
+                cantidad_hombres += 1
+
+        promedio_edad_hombres = round(suma_edad_hombres / cantidad_hombres)
+
+        # B. Porcentaje de mujeres mayores de 18 respecto al total de personas.
+        edad_mujeres_mayores = 0
+        porcentaje_mujeres_mayores = 0
+
+        for genero, edad in juntar_listas:
+            if genero == 'f' and edad >= 18:
+                edad_mujeres_mayores += edad
+
+        total_de_personas = len(juntar_listas)
+
+        if total_de_personas > 0:
+            procentaje_mujeres_mayores = (edad_mujeres_mayores / total_de_personas) * 100
+        else:
+            procentaje_mujeres_mayores = 0
+
+        alert('Información', f"Promedio de edad de los hombres: {promedio_edad_hombres}\nPorcentaje de mujeres mayores de edad es: {porcentaje_mujeres_mayores}%")
+
     
 if __name__ == "__main__":
     app = App()

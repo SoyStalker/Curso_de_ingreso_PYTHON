@@ -29,7 +29,11 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        lista = self.lista_datos
+
+        num_max = max(lista)
+
+        alert('Aler', f'De la lista {lista}, el numero mas grande es {num_max}')
     
 if __name__ == "__main__":
     app = App()
